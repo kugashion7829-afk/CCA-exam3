@@ -2,6 +2,7 @@
     <footer>
 
     </footer>
+    <script src="./scripts/script.js"></script>
     </body>
 
 </html>

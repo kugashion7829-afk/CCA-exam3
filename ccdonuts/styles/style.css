@@ -8,16 +8,9 @@
     font-style: normal;
 }
 
-@media screen and (max-width: 375px) {
-    :root {
-        font-size: 12px;
-        line-height: 12px;
-    }
-}
-
 /* #region header デザイン関係 */
 .designWrap {
-    padding-inline: clamp(12px, -19.41px + 8.3754vw, 95px);
+    padding-inline: clamp(12px, -14.87px + 7.1645vw, 83px);
 }
 
 .headerDesignPrimary {
@@ -28,7 +21,7 @@
     background-color: #B392AC;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 768px) {
     .headerDesignSecondary {
         background-color: #EDE0D4;
     }
@@ -41,6 +34,7 @@
     display: flex;
     justify-content: space-between;
     padding-block: clamp(16px, 14.49px + 0.4036vw, 20px);
+    padding-inline: 12px;
     position: relative;
 }
 
@@ -48,7 +42,7 @@
     background: url(../images/bar.svg) no-repeat center/cover;
 }
 
-.planeContainer {
+.open {
     max-width: 50px;
     width: 100%;
     height: 50px;
@@ -60,7 +54,7 @@
     box-sizing: content-box
 }
 
-.planeContainer span {
+.open span {
     background-color: #7F5539;
     display: inline-block;
     width: 100%;
@@ -106,8 +100,7 @@
 .headerWrapSecondary {
     display: flex;
     justify-content: flex-end;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding: 12px;
 }
 
 .headerWrapSecondary form {
@@ -135,30 +128,30 @@
     height: 40px;
 }
 
-@media screen and (max-width:375px) {
-    .planeContainer {
-        max-width: 25px;
-        height: 25px;
+@media screen and (max-width:768px) {
+    .open {
+        max-width: clamp(25px, 1.15px + 6.3613vw, 50px);
+        height: clamp(25px, 1.15px + 6.3613vw, 50px);
     }
     
     .buyingContainer p {
-        font-size: 10px;
-        line-height: 10px;
+        font-size: clamp(0.6250rem, 0.5057rem + 0.5089vw, 0.7500rem);
+        line-height: clamp(0.6250rem, 0.5057rem + 0.5089vw, 0.7500rem);
     }
 
     .donutsLogo {
-        max-width: 62px;
-        height: 53px;
+        max-width: clamp(62px, 38.15px + 6.3613vw, 87px);
+        height: clamp(53px, 29.15px + 6.3613vw, 78px);
     }
 
     .headerWrapSecondary {
-        padding-top: 0px;
-        padding-bottom: 8px;
+        padding-top: clamp(0px, -11.45px + 3.0534vw, 12px);
+        padding-bottom: clamp(8px, 4.18px + 1.0178vw, 12px);
     }
 
     #searchKeyword,
     .headerWrapSecondary button {
-        height: 37px;
+        height: clamp(37px, 34.14px + 0.7634vw, 40px);
     }
 
     .headerWrapSecondary button img {
@@ -169,4 +162,67 @@
 
 /* #endregion */
 
-/*  */
+/* #region header drawerMenu */
+
+.menuWrap {
+    position: absolute;
+    width: 100%;
+    height: 418px;
+    background-color: #7f5539bf;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-100%);
+}
+
+.menuWrap.visible {
+    transform: translateY(0%);
+}
+
+.menuLogo{
+    margin-top: 20px;
+}
+
+.menuWrap button {
+    position: absolute;
+    top: 15.67px;
+    right: 95px;
+}
+
+.menu {
+    margin-top: 40px;
+    color: #ffffff;
+    max-width: 560px;
+    width: 100%;
+}
+
+.menu ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 48px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.menu ul a {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    -webkit-text-stroke: 1px #7F5539;
+    paint-order: stroke fill;
+}
+
+@media screen and (max-width: 768px) {
+    
+}
+
+/* #endregion */
+
+/* 
+Webプログラミング演習3 -CCDonuts 
+        
+コード作成：久我 嗣生
+素材の権利者：中央キャリアアップアカデミー
+制作目的：授業課題
+*/

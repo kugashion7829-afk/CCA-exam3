@@ -13,14 +13,29 @@
     
     <body>
         <header>
+                             
+            <div class="menuWrap">
+                <img class="menuLogo" src="./images/ccdonutsLogo.svg" alt="ドーナツロゴ">
+                <nav class="menu">
+                    <ul><a href="#">TOP</a></ul>
+                    <ul><a href="#">商品一覧</a></ul>
+                    <ul><a href="#">よくある質問</a></ul>
+                    <ul><a href="#">問い合わせ</a></ul>
+                    <ul><a href="#">当サイトのポリシー</a></ul>
+                </nav>
+                <button class="close">
+                    <img src="./images/cross.svg" alt="閉じるボタン">
+                </button>
+            </div>
+
             <div class="designWrap headerDesignPrimary">
                 <div class="headerWrapPrimary">
-                    <div class="planeContainer">
+                    <button class="open">
                         <span></span>
                         <span></span>
                         <span></span>
-                    </div>
-                    
+                    </button>
+
                     <img class="donutsLogo "src="./images/ccdonutsLogo.svg" alt="ドーナツ屋のロゴ">
                     
                     <div class="buyingContainer">
