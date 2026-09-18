@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+:root {
+
+}
+
+/* #region header デザイン関係 */
+.designWrap {
+    padding-inline: clamp(12px, -19.41px + 8.3754vw, 95px);
+}
+
+.headerDesignPrimary {
+    background-color: #EDE0D4;
+}
+
+.headerDesignSecondary {
+    background-color: #B392AC;
+}
+
+/* #endregion */
+
+.headerWrapPrimary {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 20px;
+}
+
+.headerWrapPrimary span {
+    background: url(../images/bar.svg) no-repeat center/cover;
+}
+
+.buyingContainer {
+    display: flex;
+    justify-content: space-around;
+    padding-block: 12px;
+}
+
+.buyingContainer img {
+    margin-bottom: 9px;
+}
+
+.headerWrapSecondary {
+    display: flex;
+    justify-content: flex-end;
+}
