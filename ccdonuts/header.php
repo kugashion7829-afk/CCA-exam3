@@ -3,6 +3,9 @@
     <head>
         <meta charset=utf-8>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./common/reset.css">
         <link rel="stylesheet" href="./styles/style.css">
         <title>CCDonut</title>
@@ -12,19 +15,24 @@
         <header>
             <div class="designWrap headerDesignPrimary">
                 <div class="headerWrapPrimary">
-                    <span></span>
-                    <img src="./images/ccdonutsLogo.svg" alt="ドーナツ屋のロゴ">
+                    <div class="planeContainer">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    
+                    <img class="donutsLogo "src="./images/ccdonutsLogo.svg" alt="ドーナツ屋のロゴ">
                     
                     <div class="buyingContainer">
-                        <div class="loginContainer">
+                        <a href="#" type="button">
                             <img src="./images/intoArrow.svg" alt="ログイン">
                             <p>ログイン</p>
-                        </div>
+                        </a>
 
-                        <div class="cartContainer">
+                        <a href="#" type="button">
                             <img src="./images/cart.svg" alt="カート">
                             <p>カート</p>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>

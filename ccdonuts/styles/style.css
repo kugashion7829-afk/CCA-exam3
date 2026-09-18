@@ -1,7 +1,18 @@
 @charset "utf-8";
 
 :root {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 400;
+    font-style: normal;
+}
 
+@media screen and (max-width: 375px) {
+    :root {
+        font-size: 12px;
+        line-height: 12px;
+    }
 }
 
 /* #region header デザイン関係 */
@@ -17,29 +28,145 @@
     background-color: #B392AC;
 }
 
+@media screen and (max-width: 375px) {
+    .headerDesignSecondary {
+        background-color: #EDE0D4;
+    }
+}
+
 /* #endregion */
 
+/* #region header header部分 */
 .headerWrapPrimary {
     display: flex;
     justify-content: space-between;
-    padding-block: 20px;
+    padding-block: clamp(16px, 14.49px + 0.4036vw, 20px);
+    position: relative;
 }
 
 .headerWrapPrimary span {
     background: url(../images/bar.svg) no-repeat center/cover;
 }
 
+.planeContainer {
+    max-width: 50px;
+    width: 100%;
+    height: 50px;
+    /* padding-block: 3.41px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: clamp(8px, 6.49px + 0.4036vw, 12px);
+    box-sizing: content-box
+}
+
+.planeContainer span {
+    background-color: #7F5539;
+    display: inline-block;
+    width: 100%;
+    height: 3px;
+}
+
+.donutsLogo {
+    max-width: 87px;
+    width: 100%;
+    height: 78px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .buyingContainer {
     display: flex;
     justify-content: space-around;
-    padding-block: 12px;
+    gap: clamp(12px, 1.40px + 2.8254vw, 40px);
+    padding-top: clamp(8px, 6.49px + 0.4036vw, 12px);
+}
+
+.buyingContainer a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .buyingContainer img {
     margin-bottom: 9px;
+    max-width: clamp(24px, 19.46px + 1.2109vw, 36px);
+    width: 100%;
+    height: auto;
+}
+
+.buyingContainer p {
+    font-size: 0.75rem;
+    line-height: 0.75rem;
 }
 
 .headerWrapSecondary {
     display: flex;
     justify-content: flex-end;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
+
+.headerWrapSecondary form {
+    width: 360px;
+    display: flex;
+    gap: 0;
+}
+
+.headerWrapSecondary button {
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+    background-color: #D9D9D9;
+    border: solid 1px #7F5539;
+    width: 100%;
+    max-width: clamp(34px, 31.73px + 0.6054vw, 40px);
+    height: 40px;
+}
+
+#searchKeyword {
+    background-color: #ffffff;
+    border: solid 1px #7F5539;
+    width: 100%;
+    max-width: clamp(316px, 314.49px + 0.4036vw, 320px);
+    height: 40px;
+}
+
+@media screen and (max-width:375px) {
+    .planeContainer {
+        max-width: 25px;
+        height: 25px;
+    }
+    
+    .buyingContainer p {
+        font-size: 10px;
+        line-height: 10px;
+    }
+
+    .donutsLogo {
+        max-width: 62px;
+        height: 53px;
+    }
+
+    .headerWrapSecondary {
+        padding-top: 0px;
+        padding-bottom: 8px;
+    }
+
+    #searchKeyword,
+    .headerWrapSecondary button {
+        height: 37px;
+    }
+
+    .headerWrapSecondary button img {
+        max-width: 18px;
+        height: 18px;
+    }
+}
+
+/* #endregion */
+
+/*  */
