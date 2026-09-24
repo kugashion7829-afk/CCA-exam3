@@ -219,6 +219,26 @@
 
 /* #endregion */
 
+/* #region header footer部分 */
+
+footer {
+    background-color: #EDE0D4;
+}
+
+footer ul {
+    display: flex;
+    justify-content: space-around;
+    max-width: 510px;
+    height: 40px;
+}
+
+footer ul li {
+    border-left: 2px solid #B392AC;
+    padding: 12px;
+}
+
+
+/* #endregion */
 /* 
 Webプログラミング演習3 -CCDonuts 
         
