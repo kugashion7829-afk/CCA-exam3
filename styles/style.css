@@ -314,6 +314,12 @@ small {
     padding-block: 80px;
 }
 
+.forumSection p {
+    position: absolute;
+    font-size: 2.25rem;
+    font-weight: bold;
+}
+
 .imageContainerPrimary {
     display: flex;
     justify-content: center;
@@ -362,7 +368,7 @@ small {
 
 .imageContainerPrimary div p {
     position: static;
-    text-align: center;
+    font-size: 2rem;
 }
 
 .imageContainerSecondary {
@@ -376,6 +382,7 @@ small {
 .imageContainerSecondary p {
     bottom: 24px;
     right: 24px;
+    font-weight: 400;
     color: #7F5539;
 }
 
@@ -386,10 +393,57 @@ small {
     object-fit: cover;
 }
 
-.forumSection p {
-    position: absolute;
-    font-size: 2.25rem;
-    font-weight: bold;
+@media screen and (max-width: 768px) {
+
+    .forumSection {
+        padding-block: clamp(20px, -37.25px + 15.2672vw, 80px);
+    }
+
+    .forumSection p {
+        font-size: clamp(0.7500rem, -0.6813rem + 6.1069vw, 2.2500rem);
+    }
+
+    .imageContainerPrimary {
+        gap: clamp(20px, -37.25px + 15.2672vw, 80px);
+    }
+
+    .imageContainerPrimary a {
+        max-width: clamp(157px, -151.21px + 82.1883vw, 480px);
+        height: clamp(157px, -151.21px + 82.1883vw, 480px);
+    }
+
+    .newSalesText {
+        bottom: clamp(4px, -3.63px + 2.0356vw, 12px);
+        right: clamp(4px, -3.63px + 2.0356vw, 12px);
+    }
+
+    .donutsLifeText {
+        bottom: clamp(16px, -6.90px + 6.1069vw, 40px);
+    }
+
+    .imageContainerPrimary div {
+        top: clamp(4px, 0.18px + 1.0178vw, 8px);
+        left: clamp(4px, 0.18px + 1.0178vw, 8px);
+        max-width: clamp(40px, -55.42px + 25.4453vw, 140px);
+        height: clamp(40px, -55.42px + 25.4453vw, 140px);
+    }
+
+    .imageContainerPrimary div p {
+        font-size: clamp(0.7500rem, -0.4427rem + 5.0891vw, 2.0000rem);
+        font-weight: bold;
+    }
+
+    .imageContainerSecondary {
+        margin: clamp(20px, -37.25px + 15.2672vw, 80px) auto 0;
+        max-width: clamp(335px, -337.71px + 179.3893vw, 1040px);
+        height: clamp(83px, -83.03px + 44.2748vw, 257px);
+    }
+
+    .imageContainerSecondary p {
+        bottom: clamp(4px, -15.08px + 5.0891vw, 24px);
+        right: clamp(4px, -15.08px + 5.0891vw, 24px);
+    }
+
 }
 
 /* #endregion */
@@ -399,7 +453,7 @@ small {
 .philosophySection {
     color: #FFFFFF;
     text-align: center;
-    padding: 200px 0 280px;
+    padding-block: 200px 280px;
 }
 
 .philosophy {
@@ -441,6 +495,33 @@ small {
     position: fixed;
     top: 0;
     z-index: -9999;
+}
+
+@media screen and (max-width: 768px) {
+    .philosophySection {
+        padding-block: clamp(100px, 4.58px + 25.4453vw, 200px) clamp(280px, calc(307.57px - 2.0182vw), 300px);
+    }
+
+    .philosophy {
+        gap: clamp(40px, calc(67.57px - 2.0182vw), 60px);
+    }
+
+    .philosophySecond {
+        gap: clamp(12px, 4.37px + 2.0356vw, 20px);
+    }
+
+    .philosophyPrimal h2 {
+        font-size: clamp(1.5000rem, 0.7844rem + 3.0534vw, 2.2500rem);
+    }
+
+    .philosophyPrimal p {
+        font-size: clamp(1.0000rem, 0.7615rem + 1.0178vw, 1.2500rem);
+    }
+
+    .philosophySecond h3,
+    .philosophySecond p {
+        font-size: clamp(1.2500rem, 1.0115rem + 1.0178vw, 1.5000rem);
+    }
 }
 
 /* #endregion */
