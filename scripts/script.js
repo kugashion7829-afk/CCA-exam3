@@ -1,16 +1,21 @@
 'use strict'
 
 const menuWrap = document.querySelector('.menuWrap');
-const openButton = document.querySelector('.open');
-const closeButton = document.querySelector('.close')
+const openMenu = document.querySelector('.open');
+const closeMenu = document.querySelector('.close');
+const scrolled = document.querySelector('scrolled');
 
-openButton.addEventListener("click", function () {
+openMenu.addEventListener("click", function () {
     menuVisibility() ;
 });
 
-closeButton.addEventListener("click", function () {
+closeMenu.addEventListener("click", function () {
     menuVisibility() ;
 });
+
+window.addEventListener('scroll', function () {
+    AttachedScroll()
+})
 
 function menuVisibility() {
     if (menuWrap.classList.contains('visible')) {
@@ -20,3 +25,8 @@ function menuVisibility() {
         menuWrap.classList.add('visible');
     };
 };
+
+function AttachedScroll() {
+    scrolled.classList.toggle('scrolled', window.scrollY >= 200);
+};
+

@@ -7,16 +7,16 @@
                 <li><a href="#">当サイトのポリシー</a></li>
             </ul>
             
-            <img src="./images/ccdonutsLogo.svg" alt="ドーナツ屋のロゴ">
+            <img class="footerDonutsLogo" src="./images/ccdonutsLogo.svg" alt="ドーナツ屋のロゴ">
             <div class="SNS">
                 <a href="#"><img src="./images/Facebook.svg" alt="Facebook"></a>
                 <a href="#"><img src="./images/Instagram.svg" alt="Instagram"></a>
                 <a href="#"><img src="./images/X.svg" alt="エックス"></a>
             </div>
+        </div>
 
             <hr>
             <small>Copyright © 2026 c.c.donuts</small>
-        </div>
     </footer>
     <script src="./scripts/script.js"></script>
     </body>

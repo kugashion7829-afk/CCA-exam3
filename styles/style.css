@@ -3,7 +3,7 @@
 :root {
     font-family: "Noto Sans JP", sans-serif;
     font-size: 16px;
-    line-height: 16px;
+    line-height: 1;
     font-weight: 400;
     font-style: normal;
 }
@@ -11,6 +11,10 @@
 /* #region header デザイン関係 */
 .designWrap {
     padding-inline: clamp(12px, -14.87px + 7.1645vw, 83px);
+}
+
+.sectionDesignWrap {
+    background-color: #ffffff;
 }
 
 .headerDesignPrimary {
@@ -94,7 +98,6 @@
 
 .buyingContainer p {
     font-size: 0.75rem;
-    line-height: 0.75rem;
 }
 
 .headerWrapSecondary {
@@ -136,7 +139,6 @@
     
     .buyingContainer p {
         font-size: clamp(0.6250rem, 0.5057rem + 0.5089vw, 0.7500rem);
-        line-height: clamp(0.6250rem, 0.5057rem + 0.5089vw, 0.7500rem);
     }
 
     .donutsLogo {
@@ -170,18 +172,18 @@
     height: 418px;
     background-color: #7f5539bf;
     z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     transform: translateY(-100%);
+    transition: transform .5s ease-in-out;
 }
 
 .menuWrap.visible {
     transform: translateY(0%);
+    transition: transform .5s ease-in-out;
 }
 
 .menuLogo{
-    margin-top: 20px;
+    display: block;
+    margin: 20px auto 0;
 }
 
 .menuWrap button {
@@ -191,13 +193,13 @@
 }
 
 .menu {
-    margin-top: 40px;
+    margin: 40px auto 0;
     color: #ffffff;
     max-width: 560px;
     width: 100%;
 }
 
-.menu ul {
+.menu ul li {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -208,13 +210,29 @@
 
 .menu ul a {
     font-size: 1.5rem;
-    line-height: 1.5rem;
     -webkit-text-stroke: 1px #7F5539;
     paint-order: stroke fill;
 }
 
-@media screen and (max-width: 768px) {
-    
+@media screen and (max-width: 768px) {   
+    .menuLogo {
+        max-width: clamp(52px, 18.60px + 8.9059vw, 87px);
+        height: clamp(52px, 27.19px + 6.6158vw, 78px);
+        margin: 12px 0 0 12px;
+    }
+
+    .menu ul li {
+        justify-content: left;
+    }
+
+    .menu ul a {
+        margin-left: 12px;
+    }
+
+    .menuWrap button {
+        top: 15.67px;
+        right: 95px;
+    }
 }
 
 /* #endregion */
@@ -223,6 +241,7 @@
 
 footer {
     background-color: #EDE0D4;
+    padding-block: 20px;
 }
 
 footer ul {
@@ -237,9 +256,197 @@ footer ul li {
     padding: 12px;
 }
 
+.footerDonutsLogo {
+    max-width: 144px;
+    width: 100%;
+    height: 128px;
+    margin: 64px auto 72px;
+    display: block;
+}
+
+.SNS {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.SNS img {
+    max-width: 32px;
+    width: 100%;
+    height: 32px;
+}
+
+small {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 0.75rem;
+}
+
 
 /* #endregion */
-/* 
+
+/* #region header main部分 */
+
+.heroImageWrap {
+    width: 100%;
+    height: 593px;
+    overflow: hidden;
+}
+
+.heroImageWrap img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+    .heroImageWrap {
+        height: clamp(199px, -176.95px + 100.2545vw, 593px);
+    }
+}
+
+/* #region header forumSection部分 */
+
+.forumSection {
+    padding-block: 80px;
+}
+
+.imageContainerPrimary {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+.imageContainerPrimary a {
+    max-width: 480px;
+    height: 480px;
+    overflow: hidden;
+    display: block;
+    position: relative;
+}
+
+.imageContainerPrimary p {
+    color: #ffffff;
+}
+
+.newSalesText {
+    bottom: 12px;
+    right: 12px;
+}
+
+.donutsLifeText {
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+}
+
+.imageContainerPrimary div {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: #FF8877;
+    z-index: 10;
+    max-width: 140px;
+    width: 100%;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+}
+
+.imageContainerPrimary div p {
+    position: static;
+    text-align: center;
+}
+
+.imageContainerSecondary {
+    max-width: 1040px;
+    height: 257px;
+    overflow: hidden;
+    margin: 80px auto 0;
+    position: relative;
+}
+
+.imageContainerSecondary p {
+    bottom: 24px;
+    right: 24px;
+    color: #7F5539;
+}
+
+.forumSection img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.forumSection p {
+    position: absolute;
+    font-size: 2.25rem;
+    font-weight: bold;
+}
+
+/* #endregion */
+
+/* #region header philosophySection部分 */
+
+.philosophySection {
+    color: #FFFFFF;
+    text-align: center;
+    padding: 200px 0 280px;
+}
+
+.philosophy {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.philosophyPrimal {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.philosophySecond {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.philosophyPrimal h2 {
+    font-size: 2.25rem;
+    font-weight: 900;
+}
+
+.philosophyPrimal p {
+    font-size: 1.25rem;
+}
+
+.philosophySecond h3,
+.philosophySecond p {
+    font-size: 1.5rem;
+}
+
+.philosophy span {
+    background: url(../images/philosophyImage.jpg) no-repeat center/cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: -9999;
+}
+
+/* #endregion */
+
+/* #endregion */
+/*  
 Webプログラミング演習3 -CCDonuts 
         
 コード作成：久我 嗣生

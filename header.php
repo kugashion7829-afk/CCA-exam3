@@ -17,14 +17,16 @@
             <div class="menuWrap">
                 <img class="menuLogo" src="./images/ccdonutsLogo.svg" alt="ドーナツロゴ">
                 <nav class="menu">
-                    <ul><a href="#">TOP</a></ul>
-                    <ul><a href="#">商品一覧</a></ul>
-                    <ul><a href="#">よくある質問</a></ul>
-                    <ul><a href="#">問い合わせ</a></ul>
-                    <ul><a href="#">当サイトのポリシー</a></ul>
+                    <ul>
+                        <li><a href="#">TOP</a></li>
+                        <li><a href="#">商品一覧</a></li>
+                        <li><a href="#">よくある質問</a></li>
+                        <li><a href="#">問い合わせ</a></li>
+                        <li><a href="#">当サイトのポリシー</a></li>
+                    </ul>
                 </nav>
                 <button class="close">
-                    <img src="./images/cross.svg" alt="閉じるボタン">
+                    <img class="closeButton" src="./images/cross.svg" alt="閉じるボタン">
                 </button>
             </div>
 
