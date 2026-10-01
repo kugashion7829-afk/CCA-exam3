@@ -254,14 +254,20 @@ footer {
 
 footer ul {
     display: flex;
-    justify-content: space-around;
-    max-width: 510px;
-    height: 40px;
 }
 
 footer ul li {
+    max-width: 170px;
+    width: 100%;
+    height: 40px;
     border-left: 2px solid #B392AC;
-    padding: 12px;
+    display: flex;
+    align-items: center;
+}
+
+footer ul li a {
+    margin-left: 10px;
+    color: #7F5539;
 }
 
 .footerDonutsLogo {
@@ -285,11 +291,60 @@ footer ul li {
     height: 32px;
 }
 
+footer hr {
+    color: #7F5539;
+}
+
 small {
     display: flex;
     justify-content: center;
     margin-top: 20px;
     font-size: 0.75rem;
+    color: #7F5539;
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        padding-block: clamp(12px, 4.37px + 2.0356vw, 20px);
+        position: relative;
+    }
+
+    footer ul {
+        flex-direction: column;
+        max-width: 120px;
+        width: 100%;
+        height: 100px;
+        gap: 20px;
+    }
+
+    footer ul li {
+        padding: 0;
+    }
+
+    footer ul li a {
+        font-size: 12px;
+    }
+
+    .footerDonutsLogo {
+        max-width: 72px;
+        height: 64px;
+        position: absolute;
+        bottom: 43px;
+        right: 12px;
+        margin: 0;
+    }
+
+    .SNS {
+        margin-top: 32px;
+        gap: 20px;
+        margin-bottom: 92px;
+        justify-content: flex-start;
+    }
+
+    small {
+        margin-top: 12px;
+        font-size: 0.625rem;
+    }
 }
 
 
@@ -658,6 +713,66 @@ small {
     }
 }
 
+/* #endregion */
+
+/* #region header productDetail部分 */
+
+.detailDesign {
+    padding: 80px;
+    display: flex;
+    gap: 44px;
+}
+
+.detailDesign img {
+    max-width: 540px;
+    height: 540px;
+}
+
+.detailContainer p {
+    max-width: 435px;
+    font-size: 1.5rem;
+}
+
+.detailDesign hr {
+    width: 460px;
+    color: #E6CCB2;
+    margin-block-end: 40px;
+}
+
+.detailTitle {
+    font-weight: 700;
+    color: #7F5539;
+    margin-block: 4px 20px;
+}
+
+.detailDescription {
+    margin-block-end: 40px;
+    line-height: 1.6;
+    font-weight: 500;
+    color: #7F5539;
+    text-align: justify;
+}
+
+.detailPrice {
+    color: #bf0000;
+}
+
+.detailForm {
+    display: flex;
+    margin-top: 40px;
+}
+
+.countDesign {
+    border: 1px solid #7F5539;
+    max-width: 80px;
+    height: 52px;
+    text-align: center;
+    margin-left: 4px;
+}
+
+.detailForm label {
+    
+}
 /*  
 Webプログラミング演習3 -CCDonuts 
         
