@@ -25,6 +25,14 @@
     background-color: #B392AC;
 }
 
+.announce {
+    background-color: #ffffff;
+}
+
+.announce p {
+    color: #7F5539;
+}
+
 @media screen and (max-width: 768px) {
     .headerDesignSecondary {
         background-color: #EDE0D4;
@@ -527,6 +535,129 @@ small {
 /* #endregion */
 
 /* #endregion */
+
+/* #region header product部分 */
+
+.textDesignProduct {
+    font-size: 1.5rem;
+}
+
+.subTitleDesign {
+    max-width: 100%;
+    height: 232px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subTitleDesign h2 {
+    font-size: 2rem;
+    height: 72px;
+    border-bottom: 2px solid #ffd233;
+    display: flex;
+    align-items: center;
+}
+
+.productSection h4 {
+    margin-block: 80px 120px;
+    text-align: center;
+    color: #7F5539;
+}
+
+.productOuterWrap {
+    max-width: 1200px;
+    margin: 0 auto 200px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 120px;
+    column-gap: 60px;
+}
+
+.productInnerWrap {
+    max-width: clamp(248px, 155.53px + 12.0401vw, 320px);
+}
+
+.productImageContainer {
+    width: 100%;
+    height: clamp(248px, 155.53px + 12.0401vw, 320px);
+    overflow: hidden;
+}
+
+.productImageContainer img {
+    width: 100%;
+}
+
+.productText {
+    max-width: 100%;
+    height: 76.8px;
+    line-height: 1.6;
+    color: #7F5539;
+    font-weight: 500;
+    margin-block: 20px;
+}
+
+.productPrice {
+    font-weight: 400;
+    color: #bf0000;
+    margin-block: 20px;
+}
+
+.cartButton {
+    font-size: 1.25rem;
+    color: #ffffff;
+    background-color: #7F5539;
+    max-width: 260px;
+    width: 100%;
+    height: 52px;
+    text-align: center;
+    margin-inline: auto;
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    .textDesignProduct {
+        font-size: clamp(1.0000rem, 0.5229rem + 2.0356vw, 1.5000rem);
+    }
+
+    .subTitleDesign {
+        height: clamp(84px, -57.22px + 37.6590vw, 232px);
+    }
+
+    .subTitleDesign h2 {
+        font-size: clamp(1.2500rem, 0.5344rem + 3.0534vw, 2.0000rem);
+        height: clamp(44px, 17.28px + 7.1247vw, 72px);
+    }
+
+    .productSection h4 {
+        margin-block: clamp(20px, -37.25px + 15.2672vw, 80px) clamp(80px, 41.83px + 10.1781vw, 120px);
+    }
+
+    .productOuterWrap {
+        margin: 0 auto clamp(100px, 4.58px + 25.4453vw, 200px);
+        row-gap: clamp(80px, 41.83px + 10.1781vw, 120px);
+        column-gap: clamp(20px, -18.17px + 10.1781vw, 60px);
+    }
+
+    .productInnerWrap {
+        max-width: clamp(157px, 85.16px + 19.1579vw, 248px);
+    }
+
+    .productImageContainer {
+        height: clamp(157px, 85.16px + 19.1579vw, 248px);
+    }
+
+    .productText {
+        height: clamp(51.2px, 26.77px + 6.5140vw, 76.8px);
+    }
+
+    .cartButton {
+        font-size: clamp(0.7500rem, 0.2729rem + 2.0356vw, 1.2500rem);
+        max-width:clamp(148px, 41.13px + 28.4987vw, 260px);
+        height: clamp(36px, 20.73px + 4.0712vw, 52px);
+    }
+}
+
 /*  
 Webプログラミング演習3 -CCDonuts 
         

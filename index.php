@@ -1,15 +1,13 @@
 <?php
 // DBに接続し、表示確認用の商品を1件取得する（売上順位ではなくID順）。
 require_once __DIR__ . '/app/db.php';
+require_once __DIR__ . '/app/function.php';
 $stmt = $pdo->query('SELECT id, name, price FROM products ORDER BY id ASC LIMIT 1');
 $rankingProduct = $stmt->fetch();
 ?>
         <?php require __DIR__ . '/header.php'; ?>
+        <?php require __DIR__ . '/announce.php'; ?>
 
-        <div class="announce">
-                
-        </div>
-        
         <div class="heroImageWrap">
                 <img src="./images/HeroImage.jpg" alt="ドーナツを分け合う写真">
         </div>
@@ -35,7 +33,7 @@ $rankingProduct = $stmt->fetch();
 
                         <div class="imageContainerSecondary">
                                 
-                                <a href="#">
+                                <a href="product.php">
                                         <img src="./images/choiceDonuts.jpg" alt="ドーナツ一覧">
                                         <p>商品一覧</p>
                                 </a>            
