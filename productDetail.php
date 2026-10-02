@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['csrfToken'])) {
+    $_SESSION['csrfToken'] = bin2hex(random_bytes(32));
+}
+
 require_once __DIR__ . '/app/db.php';
 require_once __DIR__ . '/app/function.php';
 
@@ -48,9 +53,10 @@ $product = $stmt->fetch();
             
             <div class="detailForm">
                 <form action="cart.php" method="post">
+                    <input type="hidden" name="csrfToken" value="<?= htmlspecialchars($_SESSION['csrfToken'], ENT_QUOTES, 'UTF-8') ?>">
                     <input type="hidden" name="productId" value="<?= (int) $product['id'] ?>">
 
-                    <input class=countDesign type="number" id="quantity" name="quantity" value="1" min="1" step="1" required>
+                    <input class=countDesign type="number" id="quantity" name="quantity" value="1" min="1" max="999" step="1" required>
                     <label for="quantity">個</label>
 
                     <button type="submit">カートに入れる</button>

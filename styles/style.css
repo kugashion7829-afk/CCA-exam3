@@ -8,6 +8,12 @@
     font-style: normal;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 /* #region header デザイン関係 */
 .designWrap {
     padding-inline: clamp(12px, -14.87px + 7.1645vw, 83px);
@@ -365,10 +371,57 @@ small {
     object-fit: cover;
 }
 
+.textDesign {
+    font-size: 1.5rem;
+}
+
+.productCardName {
+    max-width: 100%;
+    height: 76.8px;
+    line-height: 1.6;
+    color: #7F5539;
+    font-weight: 500;
+    margin-block: 20px;
+}
+
+.rankingProductPrice {
+    font-weight: 400;
+    color: #bf0000;
+    margin-block: 20px;
+}
+
+.cartButton {
+    font-size: 1.25rem;
+    color: #ffffff;
+    background-color: #7F5539;
+    max-width: 260px;
+    width: 100%;
+    height: 52px;
+    text-align: center;
+    margin-inline: auto;
+    display: block;
+}
+
+
 @media screen and (max-width: 768px) {
     .heroImageWrap {
         height: clamp(199px, -176.95px + 100.2545vw, 593px);
     }
+
+    .textDesign {
+        font-size: clamp(1.0000rem, 0.5229rem + 2.0356vw, 1.5000rem);
+    }
+
+    .productCardName {
+        height: clamp(51.2px, 26.77px + 6.5140vw, 76.8px);
+    }
+
+    .cartButton {
+        font-size: clamp(0.7500rem, 0.2729rem + 2.0356vw, 1.2500rem);
+        max-width:clamp(148px, 41.13px + 28.4987vw, 260px);
+        height: clamp(36px, 20.73px + 4.0712vw, 52px);
+    }
+
 }
 
 /* #region header forumSection部分 */
@@ -589,13 +642,114 @@ small {
 
 /* #endregion */
 
+/* #region header rankingSection部分 */
+
+    .rankingSection {
+        background-color: #FFFFFF;
+        padding-block: 80px 120px;
+    }
+
+    .rankingSection h2 {
+        font-size: 2rem;
+        border-bottom: 1px solid #ffd233;
+        height: 72px;
+        max-width: 224px;
+        display: flex;
+        align-items: center;
+        margin: 0 auto 120px;
+    }
+
+    .rankingCard {
+        display: flex;
+        flex-wrap: wrap;
+        margin-inline: auto;
+        justify-content: center;
+        gap: 120px 60px;
+        max-width: 1080px;
+    }
+
+    .rankingContainer {
+        max-width: 320px;
+        overflow: hidden;
+    }
+
+    .rankingContainer img {
+        width: 100%;
+        height: 320px;
+    }
+
+    .rankingNumber {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        margin: 0 auto 20px;
+        color: #ffffff;
+        background-color: #E8C2CA;
+        font-weight: 500;
+    }
+
+    .rankingNumber1 {
+        background-color: #FFD233;
+    }
+
+    .rankingNumber2 {
+        background-color: #CCCCCC;
+    }
+
+    .rankingNumber3 {
+        background-color: #D27C2C;
+    }
+
+    /* ranking sectionのテキストに関する記述はmain、最上部にあります */
+    @media screen and (max-width: 900px) {
+        .rankingContainer {
+            max-width: clamp(300px, 183.64px + 15.1515vw, 320px);
+        }
+
+        .rankingContainer img {
+            height: clamp(300px, 183.64px + 15.1515vw, 320px);
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .rankingSection {
+            padding-block: clamp(19px, -39.21px + 15.5216vw, 80px) clamp(82.4px, 46.52px + 9.5674vw, 120px);;
+        }
+
+        .rankingSection h2 {
+            font-size: clamp(1.2500rem, 0.6536rem + 2.5445vw, 1.8750rem);
+            max-width: clamp(140px, 59.85px + 21.3740vw, 224px);
+            height: clamp(44px, 17.28px + 7.1247vw, 72px);
+            margin: 0 auto clamp(80px, 41.83px + 10.1781vw, 120px);
+        }
+
+        .rankingCard {
+            gap: clamp(80px, 41.83px + 10.1781vw, 120px) clamp(20px, -18.17px + 10.1781vw, 60px);
+            max-width: clamp(335px, -375.88px + 189.5674vw, 1080px);
+        }
+
+        .rankingContainer {
+            max-width: clamp(157.5px, 21.53px + 36.2595vw, 300px);
+        }
+
+        .rankingContainer img {
+            height: clamp(157px, 20.55px + 36.3868vw, 300px);
+        }
+
+        
+        .rankingNumber {
+            width: clamp(32px, 5.28px + 7.1247vw, 60px);
+            height: clamp(32px, 5.28px + 7.1247vw, 60px);
+            margin: 0 auto 20px;
+        }
+    }
+
 /* #endregion */
 
 /* #region header product部分 */
-
-.textDesignProduct {
-    font-size: 1.5rem;
-}
 
 .subTitleDesign {
     max-width: 100%;
@@ -643,37 +797,9 @@ small {
     width: 100%;
 }
 
-.productText {
-    max-width: 100%;
-    height: 76.8px;
-    line-height: 1.6;
-    color: #7F5539;
-    font-weight: 500;
-    margin-block: 20px;
-}
-
-.productPrice {
-    font-weight: 400;
-    color: #bf0000;
-    margin-block: 20px;
-}
-
-.cartButton {
-    font-size: 1.25rem;
-    color: #ffffff;
-    background-color: #7F5539;
-    max-width: 260px;
-    width: 100%;
-    height: 52px;
-    text-align: center;
-    margin-inline: auto;
-    display: block;
-}
+/* product sectionのテキストに関する記述はmain、最上部にあります */
 
 @media screen and (max-width: 768px) {
-    .textDesignProduct {
-        font-size: clamp(1.0000rem, 0.5229rem + 2.0356vw, 1.5000rem);
-    }
 
     .subTitleDesign {
         height: clamp(84px, -57.22px + 37.6590vw, 232px);
@@ -702,15 +828,6 @@ small {
         height: clamp(157px, 85.16px + 19.1579vw, 248px);
     }
 
-    .productText {
-        height: clamp(51.2px, 26.77px + 6.5140vw, 76.8px);
-    }
-
-    .cartButton {
-        font-size: clamp(0.7500rem, 0.2729rem + 2.0356vw, 1.2500rem);
-        max-width:clamp(148px, 41.13px + 28.4987vw, 260px);
-        height: clamp(36px, 20.73px + 4.0712vw, 52px);
-    }
 }
 
 /* #endregion */
@@ -720,6 +837,7 @@ small {
 .detailDesign {
     padding: 80px;
     display: flex;
+    justify-content: center;
     gap: 44px;
 }
 
@@ -770,9 +888,130 @@ small {
     margin-left: 4px;
 }
 
-.detailForm label {
+/* #endregion */
+
+/* #region header カート部分 */
+
+/* #region header buying.php部分 */
+
+    .cartContainer {
+        max-width: 1040px;
+        height: 240px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #FFD233;
+        padding-block: 40px;
+        margin: 80px auto;
+    }
+
+    .cartContainer p {
+        color: #7F5539;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
     
+    .cartContainer p span {
+        color: #bf0000;
+    }
+
+    .cartContainer input {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #bf0000;
+        max-width: 260px;
+        width: 100%;
+        height: 52px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    @media screen and(max-width: 768px) {
+
+        .cartContainer {
+            max-width: clamp(335px, -337.71px + 179.3893vw, 1040px);
+            height: clamp(148px, 60.21px + 23.4097vw, 240px);
+            padding-block: clamp(20px, 0.92px + 5.0891vw, 40px);
+            margin: clamp(20px, -37.25px + 15.2672vw, 80px) auto;
+        }
+
+        .cartContainer p {
+            font-size: clamp(1.0000rem, 0.5229rem + 2.0356vw, 1.5000rem);
+        }
+
+        .cartContainer input {
+            font-size: clamp(0.7500rem, 0.2729rem + 2.0356vw, 1.2500rem);
+            max-width: clamp(148px, 60.21px + 23.4097vw, 240px);
+            height: clamp(36px, 20.73px + 4.0712vw, 52px);
+        }
+    
+    }
+
+/* #endregion */
+
+.cartItem {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 80px;
 }
+
+.cartItem img {
+    max-width: 335px;
+    height: 335px;
+}
+
+.cartOuterWrap {
+    max-width: 665px;
+    width: 100%;
+    height: 316px;
+}
+
+.cartOuterWrap img {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.cartTextDesign {
+    font-weight: 700;
+    color: #7F5539;
+    margin-block: 4px 16px;
+    text-align: justify;
+}
+
+.cartOuterWrap hr {
+    color: #ffd233;
+}
+
+.cartInnerWrapPrimary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 20px 24px;
+}
+
+.cartInnerWrapPrimary p {
+    color: #bf0000;
+}
+
+.cartInnerWrapSecondary {
+    display: flex;
+    align-items: center;
+}
+
+.cartInnerWrapSecondary input {
+    border: 1px solid #7F5539;
+    width: 80px;
+    height: 52px;
+    text-align: right;
+    margin-inline: 12px 8px;
+    padding-right: 16px;
+}
+
+/* #endregion */
 /*  
 Webプログラミング演習3 -CCDonuts 
         

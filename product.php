@@ -7,7 +7,6 @@ $products = $stmt->fetchAll();
 ?>
 
 <?php require __DIR__ . '/header.php'; ?>
-<?php require __DIR__ . '/announce.php'; ?>
 
 <section class="productSection">
 
@@ -17,7 +16,7 @@ $products = $stmt->fetchAll();
             <h2>商品一覧</h2>
         </div>
 
-        <h4 class="textDesignProduct">メインメニュー</h4>
+        <h4 class="textDesign">メインメニュー</h4>
 
         <div class="productOuterWrap">
 
@@ -40,12 +39,12 @@ $products = $stmt->fetchAll();
                         </div>
 
                    
-                        <p class="productText textDesignProduct">
+                        <p class="productCardName textDesign">
                             <?= htmlspecialchars($product['name'], ENT_QUOTES, 'UTF-8') ?>
                         </p>
                     </a>
 
-                    <p class="productPrice textDesignProduct">
+                    <p class="rankingProductPrice textDesign">
                         税込 ￥<?= number_format((int) $product['price']) ?>
                     </p>
 
@@ -81,12 +80,12 @@ $products = $stmt->fetchAll();
                             >
                         </div>
 
-                        <p class="productText textSettings">
+                        <p class="productCardName textDesign">
                             <?= htmlspecialchars($product['name'], ENT_QUOTES, 'UTF-8') ?>
                         </p>
                     </a>
 
-                    <p class="productPrice">
+                    <p class="rankingProductPrice textDesign">
                         税込 ￥<?= number_format((int) $product['price']) ?>
                     </p>
 
