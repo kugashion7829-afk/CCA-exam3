@@ -98,7 +98,7 @@
         <?php require __DIR__ . '/app/buying.php'; ?>
 
         <?php if ($cartItems === []): ?>
-            <p>カートに商品はありません。</p>
+            <p class="cartInfo">カートに商品はありません。</p>
         <?php else: ?>
 
             <?php foreach ($cartItems as $item): ?>
@@ -125,16 +125,21 @@
                                     <span class="textDesign">個</span>
                                 </div>
 
-                                <button type="submit">再計算</button>
+                                <button class="reworkCart cartTextSettings" type="submit">再計算</button>
                             </form>
 
-                            <form action="cart.php" method="post">
+                            
+                        </div>
+
+                        <form class="deleteCart" action="cart.php" method="post">
                                 <input type="hidden" name="action" value="delete">
                                 <input type="hidden" name="productId" value="<?= (int) $item['id'] ?>">
 
-                                <button type="submit">削除する</button>
-                            </form>
-                        </div>
+                                <button type="submit cartTextSettings">削除する</button>
+                        </form>
+
+                        <hr>
+
                     </div>
 
                 </article>
@@ -142,6 +147,9 @@
         <?php endif; ?>
 
         <?php require __DIR__ . '/app/buying.php'; ?>
+
+        <a class="recallProduct cartTextSettings" href="./product.php">買い物を続ける</a>
+
     </div>
 
 <?php require __DIR__ . '/footer.php'; ?>

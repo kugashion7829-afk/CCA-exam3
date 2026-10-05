@@ -19,6 +19,10 @@ input[type="number"]::-webkit-outer-spin-button {
     padding-inline: clamp(12px, -14.87px + 7.1645vw, 83px);
 }
 
+.designWrapUsers {
+    padding-inline: clamp(40px, -49.30px + 23.8143vw, 276px);
+}
+
 .sectionDesignWrap {
     background-color: #ffffff;
 }
@@ -749,7 +753,9 @@ small {
 
 /* #endregion */
 
-/* #region header product部分 */
+/* #endregion */
+
+/* #region header product.php */
 
 .subTitleDesign {
     max-width: 100%;
@@ -832,27 +838,33 @@ small {
 
 /* #endregion */
 
-/* #region header productDetail部分 */
+/* #region header productDetail.php */
 
 .detailDesign {
-    padding: 80px;
+    padding-block: 80px;
     display: flex;
     justify-content: center;
-    gap: 44px;
+    gap: 40px;
+    margin-inline: auto;
 }
 
-.detailDesign img {
+#detailHeroImage {
     max-width: 540px;
     height: 540px;
 }
 
-.detailContainer p {
-    max-width: 435px;
+.detailContainer {
+    max-width: 460px;
+    width: 100%;
+    
+}
+
+.detailSettings {
     font-size: 1.5rem;
 }
 
 .detailDesign hr {
-    width: 460px;
+    width: 100%;
     color: #E6CCB2;
     margin-block-end: 40px;
 }
@@ -864,6 +876,7 @@ small {
 }
 
 .detailDescription {
+    width: 100%;
     margin-block-end: 40px;
     line-height: 1.6;
     font-weight: 500;
@@ -880,17 +893,111 @@ small {
     margin-top: 40px;
 }
 
+.detailForm .cartButton {
+    width: 260px;
+}
+
+.detailForm label {
+    display: flex;
+    align-items: flex-end;
+    margin-inline: 8px 20px;
+}
+
+.formDesign {
+    display: flex;
+}
+
 .countDesign {
     border: 1px solid #7F5539;
     max-width: 80px;
+    width: 100%;
     height: 52px;
     text-align: center;
     margin-left: 4px;
 }
 
+.favoriteDetail {
+    width: 52px;
+    height: 52px;
+    border: 1px solid #7F5539;
+    margin-left: 8px;
+}
+
+.favoriteDetail img {
+    display: block;
+    width: 28.89px;
+    height: 28.89px;
+    margin-inline: auto;
+}
+
+@media screen and (min-width: 769px) {
+    .detailDesign {
+        width: 1200px;
+        transform: scale(clamp(0.6, calc((100vw + 129px) / 1495px), 1));
+        transform-origin: left center;
+    }
+}
+
+@media screen and (max-width: 768px){
+    
+    .detailDesign {
+        padding-block: clamp(20px, -37.25px + 15.2672vw, 80px);
+        gap: clamp(20px, 0.92px + 5.0891vw, 40px);
+        flex-direction: column;
+    }
+
+    #detailHeroImage {
+        max-width: clamp(335px, 139.39px + 52.1628vw, 540px);
+        height: clamp(335px, 139.39px + 52.1628vw, 540px);
+        margin-inline: auto;
+    }
+    
+    .detailContainer {
+        max-width: clamp(335px, 215.73px + 31.8066vw, 460px);
+        margin-inline: auto;
+    }
+
+    .detailContainer p {
+        font-size: clamp(1.0000rem, 0.5229rem + 2.0356vw, 1.5000rem);
+    }
+
+    .detailDesign hr {
+        margin-block-end: clamp(20px, 0.92px + 5.0891vw, 40px);
+    }
+
+    .detailTitle {
+        margin-block: clamp(0px, -3.82px + 1.0178vw, 4px) 20px;
+    }
+
+    .detailDescription {
+        margin-block-end: clamp(20px, 0.92px + 5.0891vw, 40px);
+    }
+
+    .countDesign {
+        max-width: clamp(56px, 33.10px + 6.1069vw, 80px);
+        height: clamp(36px, 20.73px + 4.0712vw, 52px);
+        margin-left: clamp(0px, -3.82px + 1.0178vw, 4px);
+    }
+
+    .detailForm .cartButton {
+        height: clamp(36px, 20.73px + 4.0712vw, 52px);
+    }
+
+    .favoriteDetail {
+        width: clamp(36px, 20.73px + 4.0712vw, 52px);
+        height: clamp(36px, 20.73px + 4.0712vw, 52px);
+    }
+
+    .favoriteDetail img {
+        width: clamp(20px, 11.52px + 2.2621vw, 28.89px);
+        height: clamp(20px, 11.52px + 2.2621vw, 28.89px);
+    }
+
+}
+
 /* #endregion */
 
-/* #region header カート部分 */
+/* #region header cart.php */
 
 /* #region header buying.php部分 */
 
@@ -967,12 +1074,6 @@ small {
 .cartOuterWrap {
     max-width: 665px;
     width: 100%;
-    height: 316px;
-}
-
-.cartOuterWrap img {
-    font-size: 1.5rem;
-    font-weight: 700;
 }
 
 .cartTextDesign {
@@ -989,12 +1090,13 @@ small {
 .cartInnerWrapPrimary {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-block: 20px 24px;
 }
 
 .cartInnerWrapPrimary p {
     color: #bf0000;
+    margin-top: 14px;
 }
 
 .cartInnerWrapSecondary {
@@ -1010,6 +1112,241 @@ small {
     margin-inline: 12px 8px;
     padding-right: 16px;
 }
+
+.cartTextSettings {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.reworkCart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    max-width: 160px;
+    width: 100%;
+    height: 36px;
+    background-color: #CCCCCC;
+}
+
+.deleteCart {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 100%;
+    margin-block: 100px 20px;
+    color: #000000;
+}
+
+.deleteCart button {
+    border-bottom: 1px solid #000000;
+}
+
+.cartInfo {
+    text-align: center;
+}
+
+.recallProduct {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    max-width: 260px;
+    width: 100%;
+    height: 52px;
+    background-color: #7F5539;
+    margin: 0 auto 120px;
+}
+@media screen and (max-width: 900px)  {
+    .cartInnerWrapPrimary {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cartItem {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0;
+        gap: clamp(20px, 0.92px + 5.0891vw, 40px);
+    }
+
+    .cartTextDesign {
+        font-weight: 700;
+        margin-block: 0;
+        text-align: center;
+    }
+
+    .cartOuterWrap hr {
+        display: none;
+    }
+
+    .cartInnerWrapPrimary {
+        margin-block: 20px 24px;
+    }
+
+    .cartInnerWrapPrimary p {
+        margin-top: 0;
+    }
+
+    .cartInnerWrapSecondary {
+        margin-top: 12px;
+    }
+
+    .cartInnerWrapSecondary input {
+        width: 56px;
+        height: 24px;
+        margin-inline: 16px 4px;
+        padding-right: 8px;
+    }
+
+    .cartTextSettings {
+        font-size: 0.75rem;
+    }
+
+    .reworkCart {
+        margin-top: 20px;
+        max-width: 140px;
+        height: 28px;
+    }
+
+    .deleteCart {
+        max-width: 100%;
+        margin-block: 20px 40px;
+        justify-content: center;
+    }
+
+    .recallProduct {
+        max-width: 160px;
+        height: 36px;
+        margin: 0 auto 80px;
+    }
+}
+
+/* #endregion */
+
+/* #region header register.php */
+
+#registerTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 80px;
+    height: 44px;
+    font-size: 1.25rem;
+    border-bottom: solid 2px #ffd233;
+}
+
+.registerPage label {
+    font-size: 0.75rem;
+    color: #7F5539;
+}
+
+.registerPage span {
+    color: #ff0000;
+}
+
+.registerPage p {
+    color: #ff0000;
+    font-size: 0.5rem;
+}
+
+.registerPage input {
+    border: 1px solid #7F5539;
+}
+
+.registerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.registerContainer input {
+    height: 20px;
+    margin-bottom: 20px;
+    padding: 0 0 3px 4px;
+    text-align: justify;
+    font-size: 0.75rem;
+    color: #000000;
+}
+
+.postcodeContainer {
+    display: flex;
+    gap: 4px;
+}
+
+.postcodeA {
+    max-width: 60px;
+    width: 100%;
+}
+
+.postcodeB {
+    max-width: 100px;
+    width: 100%;
+}
+
+.registerPage button {
+    display: block;
+    background-color: #7F5539;
+    color: #FFFFFF;
+    max-width: 160px;
+    width: 100%;
+    height: 48px;
+    text-align: center;
+    margin: 40px auto 80px;
+}
+
+@media screen and (min-width: 768px) {
+    .registerPage {
+        max-width: 1000px;
+        margin-inline: auto;
+    }
+
+    #registerTitle {
+        margin: 40px auto;
+        width: 100px;
+        height: 66px;
+        font-size: 1.5rem;
+        border-bottom: solid 2px #ffd233;
+    }
+
+    .registerPage label {
+        font-size: 1rem;
+    }
+
+    .registerPage p {
+        font-size: 0.75rem;
+    }
+
+    .registerContainer input {
+        height: 28px;
+        margin-bottom: 24px;
+        padding: 0 0 3px 4px;
+        font-size: 1rem;
+    }
+
+    .postcodeA {
+        max-width: 100px;
+    }
+
+    .postcodeB {
+        max-width: 140px;
+    }
+
+    .registerPage button {
+        max-width: 200px;
+        height: 60px;
+        font-size: 1.2rem;
+        margin: 60px auto 100px;
+    }
+}
+
+/* #endregion */
+
+/* #region header registerConfirm.php */
+
+
 
 /* #endregion */
 /*  

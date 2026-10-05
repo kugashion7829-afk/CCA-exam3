@@ -48,7 +48,12 @@ $products = $stmt->fetchAll();
                         税込 ￥<?= number_format((int) $product['price']) ?>
                     </p>
 
-                    <input class="cartButton" type="submit" value="カートに入れる">
+                    <form action="cart.php" method="post">
+                        <input type="hidden" name="csrfToken" value="<?= htmlspecialchars($_SESSION['csrfToken'], ENT_QUOTES, 'UTF-8') ?>">
+                        <input type="hidden" name="productId" value="<?= (int) $product['id'] ?>">
+
+                        <button class="cartButton" type="submit">カートに入れる</button>
+                    </form>
 
                 </div>
 

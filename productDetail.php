@@ -30,42 +30,44 @@ $product = $stmt->fetch();
             $imagePath = getProductImagePath((int) $product['id']);
         ?>
 
-        <img 
+        <img id="detailHeroImage" 
             src="<?= htmlspecialchars($imagePath, ENT_QUOTES, 'UTF-8') ?>"
             alt="<?= htmlspecialchars($product['name'], ENT_QUOTES, 'UTF-8') ?>"
         >
 
         <div class="detailContainer">
 
-            <p class="detailTitle"> <?= htmlspecialchars($product['name'], ENT_QUOTES, 'UTF-8') ?> </p>
+            <p class="detailTitle detailSettings"> <?= htmlspecialchars($product['name'], ENT_QUOTES, 'UTF-8') ?> </p>
             
             <hr>
 
-            <p class="detailDescription">
+            <p class="detailDescription detailSettings">
                 <?= htmlspecialchars($product['introduction'], ENT_QUOTES, 'UTF-8') ?>
             </p>
 
             <hr>
 
-            <p class="detailPrice">
+            <p class="detailPrice detailSettings">
                 税込 ￥<?= number_format((int) $product['price']) ?>
             </p>
             
             <div class="detailForm">
-                <form action="cart.php" method="post">
+                <form class="formDesign" action="cart.php" method="post">
                     <input type="hidden" name="csrfToken" value="<?= htmlspecialchars($_SESSION['csrfToken'], ENT_QUOTES, 'UTF-8') ?>">
                     <input type="hidden" name="productId" value="<?= (int) $product['id'] ?>">
 
                     <input class=countDesign type="number" id="quantity" name="quantity" value="1" min="1" max="999" step="1" required>
-                    <label for="quantity">個</label>
+                    <label class="detailSettings" for="quantity">個</label>
 
-                    <button type="submit">カートに入れる</button>
+                    <button class="cartButton " type="submit">カートに入れる</button>
                 </form>
 
                 <form action="favorite.php" method="post">
                     <input type="hidden" name="productId" value="<?= (int) $product['id'] ?>">
 
-                    <button type="submit">♡</button>
+                    <button class="favoriteDetail" type="submit">
+                        <img src="./images/heart.svg">
+                    </button>
                 </form>
             </div>
 
