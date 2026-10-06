@@ -62,10 +62,10 @@ HTMLから始まりCSS、PHPと各ページごとに順に作業を切り分け�
 
 各ページで使う共通ファイルですから予め用意する方が効率的だと考えました。実際、指示書でも最初のうちに作成するよう促されていましたね。
 
-header.phpには基本的なhtmlの<mark>お決まりセット</mark>から\<head>タグ,\<body>開始タグ,<header>タグ,<main>開始タグを含めた構成になっています。
+header.phpには基本的なhtmlの<mark>お決まりセット</mark>から\<head>タグ,\<body>開始タグ,\<header>タグ,\<main>開始タグを含めた構成になっています。
 
 基本的なstyle.cssやgoogle-fontの指定もheader.phpで行っています。
 
-footer.phpには<main>終了タグ,<body>終了タグ,<footer>タグ,<small>タグ,などが含まれています。
+footer.phpには\<main>終了タグ,\<body>終了タグ,\<footer>タグ,\<small>タグ,などが含まれています。
 
 headerに付属しているドロワーメニューのscript.jsもfooter.phpで読み込ませています。
