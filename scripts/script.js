@@ -30,3 +30,12 @@ function AttachedScroll() {
     scrolled.classList.toggle('scrolled', window.scrollY >= 200);
 };
 
+    const registerContainer = document.querySelectorAll('registerContainer');
+    const inputRegister = document.getElementById('inputRegister');
+
+    inputRegister.addEventListener('click', function (){
+        if (registerContainer[6] !== registerContainer[7]) {
+            inputRegister[6].classList.add('difference');
+            inputRegister[7].classList.add('difference');
+        }
+    })

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang=ja>
     <head>
-        <meta charset=utf-8>
+        <meta charset=UTF-8>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,12 +41,12 @@
                     <img class="donutsLogo "src="./images/ccdonutsLogo.svg" alt="ドーナツ屋のロゴ">
                     
                     <div class="buyingContainer">
-                        <a href="#" type="button">
+                        <a href="./login.php" type="button">
                             <img src="./images/intoArrow.svg" alt="ログイン">
                             <p>ログイン</p>
                         </a>
 
-                        <a href="#" type="button">
+                        <a href="./cart.php" type="button">
                             <img src="./images/cart.svg" alt="カート">
                             <p>カート</p>
                         </a>

@@ -1,7 +1,7 @@
 <?php require __DIR__ . '/header.php'; ?>
 
 <div class="designWrapUsers"> 
-    <h2 id="registerTitle">会員登録</h2>
+    <h1 class="usersDesign">会員登録</h1>
 
     <form class="registerPage" action="registerComfirm.php" method="post">
         <div class="registerContainer">
@@ -48,10 +48,20 @@
             <input type="password" id="passwordB" name="passwordB" minlength="8" maxlength="20" autocomplete="new-password" placeholder="123456abcd" required>
         </div>
         
-        <button type="submit">入力を確認する</button>
+        <button class="submitButton" type="submit">入力を確認する</button>
 
     </form>
 
 </div>
+
+<<script>
+    'use strict'
+
+    const registerContainer = document.querySelectorAll('registerContainer');
+    const inputRegister = document.getElementById('inputRegister');
+
+    inputRegister.addEventLister()
+
+</script>
 
 <?php require __DIR__ . '/footer.php'; ?>
