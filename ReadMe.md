@@ -97,4 +97,5 @@ header.phpには基本的なhtmlの<mark>お決まりセット</mark>から\<hea
 
 footer.phpには\<main>終了タグ,\<body>終了タグ,\<footer>タグ,\<small>タグ,などが含まれています。
 
-headerに付属しているドロワーメニューのscript.jsもfooter.phpで読み込ませています。
+headerに付属しているドロワーメニューのscript.js、パンくずメニューのannounce.jsもfooter.phpで読み込ませています。
+

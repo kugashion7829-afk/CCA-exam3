@@ -19,6 +19,7 @@
             <small>Copyright © 2026 c.c.donuts</small>
     </footer>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/announce.js"></script>
     </body>
 
 </html>

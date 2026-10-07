@@ -76,7 +76,7 @@
 
 <?php require __DIR__ . '/header.php'; ?>
 
-<div class="designWrapUsers">
+<div class="designWrapUsers comfirmPage">
     <h1 class="usersDesign">入力確認</h1>
 
     <div class="comfirmContainer">

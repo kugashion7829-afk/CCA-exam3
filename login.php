@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <?php require __DIR__ . '/header.php'; ?>
 
-<div class="designWrapUsers">
+<div class="designWrapUsers loginPage">
     <h1 class="usersDesign">ログイン</h1>
     
     <?php if ($error !== ''): ?>

@@ -2,6 +2,13 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+
+if (!isset($_SESSION['customer'])) {
+    $ANNOUNCE = 'ゲスト';
+} else {
+    $ANNOUNCE = $_SESSION['customer']['name'];
+}
+
 ?>
 <!DOCTYPE html>
 <html lang=ja>
@@ -31,7 +38,10 @@ if (session_status() === PHP_SESSION_NONE) {
                     </ul>
                 </nav>
                 <button class="close">
-                    <img class="closeButton" src="./images/cross.svg" alt="閉じるボタン">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="./images/crossSP.svg">
+                        <img class="closeButton" src="./images/cross.svg" alt="閉じるボタン">
+                    </picture>
                 </button>
             </div>
 
@@ -78,6 +88,12 @@ if (session_status() === PHP_SESSION_NONE) {
                     </form>
                 </div>
             </div>
+            
+            <div class="announce breadcrumb">
+                <p>ようこそ</p>
+                <p><?= htmlspecialchars($ANNOUNCE, ENT_QUOTES, 'UTF-8') ?>様</p>
+            </div>
+        
         </header>
 
         <main>

@@ -35,12 +35,18 @@ input[type="number"]::-webkit-outer-spin-button {
     background-color: #B392AC;
 }
 
-.announce {
+.breadcrumb {
     background-color: #ffffff;
+    font-size: 0.75rem;
+    height: 36px;
+    padding: 12px 0 12px clamp(20px, -11.41px + 8.3754vw, 103px);
+    color: #7F5539;
+    border-bottom: 1px solid #7F5539;
 }
 
-.announce p {
-    color: #7F5539;
+.announce {
+    display: flex;
+    gap: 12px;
 }
 
 @media screen and (max-width: 768px) {
@@ -248,8 +254,13 @@ input[type="number"]::-webkit-outer-spin-button {
     }
 
     .menuWrap button {
-        top: 15.67px;
-        right: 95px;
+        top: 12px;
+        right: 12px;
+    }
+
+    .menuWrap button img {
+        width: 26px;
+        height: 26px;
     }
 }
 
