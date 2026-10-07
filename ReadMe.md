@@ -18,7 +18,19 @@ Copyright © 2026 久我嗣生. All Rights Reserved.
 
 |ファイル名|リポジトリ|用途|
 |:--|:--|:--|
-|index.php|
+|index.php|ccdonuts/index.php|トップページ|
+|product.php|ccdonuts/product.php|商品一覧|
+|productDetail.php|ccdonuts/productDetail.php|商品詳細|
+|header.php|ccdonuts/header.php|共通ファイル・header|
+|footer.php|ccdonuts/footer.php|共通ファイル・footer|
+|cart.php|ccdounts/cart.php|カートページ|
+|login.php|ccdonuts/login.php|ログインページ|
+|account.php|ccdounts/account.php|ログイン後アカウントページ|
+|register.php|ccdonuts/register.php|会員登録ページ|
+|registerComfirm.php|ccdonuts/registerComfirm.php|登録内容確認ページ|
+|registerComplete.php|ccdonuts/registerComplete.php|登録完了ページ|
+||||
+|buying.php|ccdonuts/app/buying.php|カートページの購入詳細に遷移するためのデザイン|
 
 
 ## 総括
