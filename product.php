@@ -10,7 +10,7 @@ $products = $stmt->fetchAll();
 
 <section class="productSection">
 
-    <div class="designWrap">
+    <div class="designWrap productPage">
 
         <div class="subTitleDesign">
             <h2>商品一覧</h2>
@@ -49,11 +49,11 @@ $products = $stmt->fetchAll();
                     </p>
 
                     <form action="cart.php" method="post">
-                        <input type="hidden" name="csrfToken" value="<?= htmlspecialchars($_SESSION['csrfToken'], ENT_QUOTES, 'UTF-8') ?>">
-                        <input type="hidden" name="productId" value="<?= (int) $product['id'] ?>">
-
-                        <button class="cartButton" type="submit">カートに入れる</button>
-                    </form>
+    <input type="hidden" name="action" value="add">
+    <input type="hidden" name="productId" value="<?= (int) $product['id'] ?>">
+    <input type="hidden" name="quantity" value="1">
+    <button class="cartButton" type="submit">カートに入れる</button>
+</form>
 
                 </div>
 
@@ -94,7 +94,12 @@ $products = $stmt->fetchAll();
                         税込 ￥<?= number_format((int) $product['price']) ?>
                     </p>
 
-                    <input class="cartButton" type="submit" value="カートに入れる">
+                    <form action="cart.php" method="post">
+    <input type="hidden" name="action" value="add">
+    <input type="hidden" name="productId" value="<?= (int) $product['id'] ?>">
+    <input type="hidden" name="quantity" value="1">
+    <button class="cartButton" type="submit">カートに入れる</button>
+</form>
 
                 </div>
 

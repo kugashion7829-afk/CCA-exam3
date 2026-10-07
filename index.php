@@ -14,13 +14,13 @@ $rankingProducts = $stmt->fetchAll();
                 <img src="./images/HeroImage.jpg" alt="ドーナツを分け合う写真">
         </div>
 
-        <div class="designWrap sectionDesignWrap">
+        <div class="designWrap sectionDesignWrap topPage">
                 
                 <section class="forumSection">
 
                         <div class="imageContainerPrimary" type="button">
                                
-                                <a href="#">
+                                <a href="productDetail.php?id=5">
                                         <img src="./images/newSales.jpg" alt="新商品">
                                         <p class="newSalesText">サマーシトラス</p>
                                         <div><p>新商品</p></div>
@@ -84,7 +84,12 @@ $rankingProducts = $stmt->fetchAll();
 
                                                         <p class="rankingProductPrice textDesign">税込 ￥<?= number_format((int) $product['price']) ?></p>
 
-                                                        <input class="cartButton" type="submit" value="カートに入れる">
+                                                        <form action="cart.php" method="post">
+    <input type="hidden" name="action" value="add">
+    <input type="hidden" name="productId" value="<?= (int) $product['id'] ?>">
+    <input type="hidden" name="quantity" value="1">
+    <button class="cartButton" type="submit">カートに入れる</button>
+</form>
                                                 </div>
 
                                 <?php endforeach; ?>

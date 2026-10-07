@@ -94,7 +94,7 @@
 
 <?php require __DIR__ . '/header.php'; ?>
 
-    <div class="designWrap">
+    <div class="designWrap cartPage">
         <?php require __DIR__ . '/app/buying.php'; ?>
 
         <?php if ($cartItems === []): ?>

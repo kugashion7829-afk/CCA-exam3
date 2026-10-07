@@ -18,20 +18,30 @@ Copyright © 2026 久我嗣生. All Rights Reserved.
 
 |ファイル名|リポジトリ|用途|
 |:--|:--|:--|
-|index.php|ccdonuts/index.php|トップページ|
-|product.php|ccdonuts/product.php|商品一覧|
-|productDetail.php|ccdonuts/productDetail.php|商品詳細|
-|header.php|ccdonuts/header.php|共通ファイル・header|
-|footer.php|ccdonuts/footer.php|共通ファイル・footer|
-|cart.php|ccdounts/cart.php|カートページ|
-|login.php|ccdonuts/login.php|ログインページ|
-|account.php|ccdounts/account.php|ログイン後アカウントページ|
-|register.php|ccdonuts/register.php|会員登録ページ|
-|registerComfirm.php|ccdonuts/registerComfirm.php|登録内容確認ページ|
-|registerComplete.php|ccdonuts/registerComplete.php|登録完了ページ|
+|**index.php**|ccdonuts/index.php|トップページ|
+|**product.php**|ccdonuts/product.php|商品一覧|
+|**productDetail.php**|ccdonuts/productDetail.php|商品詳細|
+|**header.php**|ccdonuts/header.php|共通ファイル・header|
+|**footer.php**|ccdonuts/footer.php|共通ファイル・footer|
+|**cart.php**|ccdounts/cart.php|カートページ|
+|**login.php**|ccdonuts/login.php|ログインページ|
+|**account.php**|ccdounts/account.php|ログイン後アカウントページ|
+|**register.php**|ccdonuts/register.php|会員登録ページ|
+|**registerComfirm.php**|ccdonuts/registerComfirm.php|登録内容確認ページ|
+|**registerComplete.php**|ccdonuts/registerComplete.php|登録完了ページ|
 ||||
-|buying.php|ccdonuts/app/buying.php|カートページの購入詳細に遷移するためのデザイン|
-
+|**buying.php**|ccdonuts/app/buying.php|カートページの購入詳細に遷移するためのデザイン|
+|**db.php**|ccdounts/app/db.php|データベースへ接続するための記述がまとめられています|
+|**function.php**|ccdonuts/app/function.php|選択された商品に合わせて画像を表示するための関数を格納しています|
+||||
+|**reset.css**|ccdonuts/common/reset.css|ウェブ本来のcssを無効化するためのcssファイルです|
+||||
+|**products**|ccdounts/images/products|個々の商品の画像を格納しています|
+||||
+|**script.js**|ccdonuts/scripts/script.js|ドロワーメニューの開閉に使用しています|
+|**announce.js**|ccdonuts/scripts/announce.js|headerの下部にパンくずメニューを追加するjsです。※開発中|
+||||
+|**style.css**|ccdonuts/styles/style.css|Web上の表示を整えるためのcssファイルです|
 
 ## 総括
 

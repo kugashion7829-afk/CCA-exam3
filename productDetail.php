@@ -23,7 +23,7 @@ $product = $stmt->fetch();
 <?php require __DIR__ . '/header.php'; ?>
 <?php if ($product !== false): ?>
 
-<div class="designWrap">
+<div class="designWrap productDetailPage">
     <div class="detailDesign">
 
         <?php

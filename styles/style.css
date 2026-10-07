@@ -1503,6 +1503,49 @@ small {
 }
 
 /* #endregion */
+
+/* #region header loginComplete.php */
+
+.loginCompletePage > :nth-child(1) {
+    width: 120px;
+}
+
+.loginCompletePage > :nth-child(2) {
+    border: 2px solid #f7d1cd;
+    gap: clamp(20px, 16.22px + 1.0091vw, 30px);   
+    height: clamp(84px, 68.86px + 4.0363vw, 124px);
+    margin: clamp(40px, 32.43px + 2.0182vw, 60px) auto clamp(20px, 12.43px + 2.0182vw, 40px);
+}
+
+.loginCompletePage > :nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: clamp(8px, 4.97px + 0.8073vw, 16px);
+    margin: clamp(20px, 12.43px + 2.0182vw, 40px) auto clamp(80px, 64.86px + 4.0363vw, 120px);
+}
+
+/* #endregion */
+
+/* #region header account.php */
+
+.accountPage > :nth-child(1) {
+    width: 100px;
+}
+
+.accountPage > :nth-child(2) {
+    border: 2px solid #f7d1cd;
+    margin: clamp(40px, 32.43px + 2.0182vw, 60px) auto clamp(20px, 12.43px + 2.0182vw, 40px);
+    gap: clamp(20px, 16.22px + 1.0091vw, 30px);   
+}
+
+/* #endregion */
+
+/* #region header logout.php */
+
+
+
+/* #endregion */
 /*  
 Webプログラミング演習3 -CCDonuts 
         

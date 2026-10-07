@@ -1,3 +1,8 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang=ja>
     <head>
@@ -41,10 +46,17 @@
                     <img class="donutsLogo "src="./images/ccdonutsLogo.svg" alt="ドーナツ屋のロゴ">
                     
                     <div class="buyingContainer">
-                        <a href="./login.php" type="button">
-                            <img src="./images/intoArrow.svg" alt="ログイン">
-                            <p>ログイン</p>
-                        </a>
+                        <?php if (isset($_SESSION['customer'])): ?>
+                            <a href="./account.php">
+                                <img src="./images/intoArrow.svg" alt="">
+                                <p>アカウント</p>
+                            </a>
+                        <?php else: ?>
+                            <a href="./login.php">
+                                <img src="./images/intoArrow.svg" alt="">
+                                <p>ログイン</p>
+                            </a>
+                        <?php endif; ?>
 
                         <a href="./cart.php" type="button">
                             <img src="./images/cart.svg" alt="カート">
