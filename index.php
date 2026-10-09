@@ -85,6 +85,7 @@ $rankingProducts = $stmt->fetchAll();
                                                         <p class="rankingProductPrice textDesign">税込 ￥<?= number_format((int) $product['price']) ?></p>
 
                                                         <form action="cart.php" method="post">
+                        <input type="hidden" name="csrfToken" value="<?= htmlspecialchars($_SESSION['csrfToken'], ENT_QUOTES, 'UTF-8') ?>">
     <input type="hidden" name="action" value="add">
     <input type="hidden" name="productId" value="<?= (int) $product['id'] ?>">
     <input type="hidden" name="quantity" value="1">

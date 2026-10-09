@@ -1,4 +1,4 @@
-<?php session_start();
+<?php require_once __DIR__ . '/app/session.php';
 
     require_once __DIR__ . '/app/db.php';
     require_once __DIR__ . '/app/function.php';
@@ -8,6 +8,10 @@
     }
     
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if (!hasValidCsrfToken()) {
+            http_response_code(403);
+            exit('送信内容を確認できません。ページを開き直してください。');
+        }
         $action = $_POST['action'] ?? 'add';
         $productId = filter_input(
             INPUT_POST,
@@ -31,7 +35,7 @@
             INPUT_POST,
             'quantity',
             FILTER_VALIDATE_INT,
-            ['options' => ['min_range' => 1]]
+            ['options' => ['min_range' => 1, 'max_range' => 999]]
         );
 
         if (!$productId || !$quantity) {
@@ -58,6 +62,10 @@
             $_SESSION['cart'][$productId] = $quantity;
         } else if ($action === 'add') {
             $currentQuantity = $_SESSION['cart'][$productId] ?? 0;
+            if ($currentQuantity + $quantity > 999) {
+                http_response_code(400);
+                exit('同じ商品は合計999個まで追加できます。');
+            }
             $_SESSION['cart'][$productId] = $currentQuantity + $quantity;
 
         } else {
@@ -68,7 +76,7 @@
         exit;
     }
 
-    $cartCount = array_sum($_SESSION['cart']);
+    $cartCount = 0;
     $cartTotal = 0;
     $cartItems = [];
 
@@ -84,6 +92,7 @@
             $product['quantity'] = $quantity;
             $product['subtotal'] = (int) $product['price'] * $quantity;
 
+            $cartCount += $quantity;
             $cartTotal += $product['subtotal'];
 
             $cartItems[] = $product;
@@ -116,12 +125,13 @@
                             <p class="textDesign">税込　￥<?= number_format((int)$item['price']) ?></p>
                             
                             <form action="cart.php" method="post">
+                        <input type="hidden" name="csrfToken" value="<?= htmlspecialchars($_SESSION['csrfToken'], ENT_QUOTES, 'UTF-8') ?>">
                                 <input type="hidden" name="action" value="update">
                                 <input type="hidden" name="productId" value="<?= (int) $item['id'] ?>">
 
                                 <div class="cartInnerWrapSecondary">
                                     <label class="textDesign" for="quantity<?= (int) $item['id'] ?>">数量</label>
-                                    <input class="textDesign" type="number" id="quantity<?= (int) $item['id'] ?>" name="quantity" value="<?= (int) $item['quantity'] ?>" min="1" step="1" required>
+                                    <input class="textDesign" type="number" id="quantity<?= (int) $item['id'] ?>" name="quantity" value="<?= (int) $item['quantity'] ?>" min="1" max="999" step="1" required>
                                     <span class="textDesign">個</span>
                                 </div>
 
@@ -132,10 +142,11 @@
                         </div>
 
                         <form class="deleteCart" action="cart.php" method="post">
+                        <input type="hidden" name="csrfToken" value="<?= htmlspecialchars($_SESSION['csrfToken'], ENT_QUOTES, 'UTF-8') ?>">
                                 <input type="hidden" name="action" value="delete">
                                 <input type="hidden" name="productId" value="<?= (int) $item['id'] ?>">
 
-                                <button type="submit cartTextSettings">削除する</button>
+                                <button type="submit" class="cartTextSettings">削除する</button>
                         </form>
 
                         <hr>

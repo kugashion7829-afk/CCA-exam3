@@ -38,7 +38,9 @@ input[type="number"]::-webkit-outer-spin-button {
 .breadcrumb {
     background-color: #ffffff;
     font-size: 0.75rem;
-    height: 36px;
+    min-height: 36px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
     padding: 12px 0 12px clamp(20px, -11.41px + 8.3754vw, 103px);
     color: #7F5539;
     border-bottom: 1px solid #7F5539;
@@ -943,9 +945,22 @@ small {
 
 @media screen and (min-width: 769px) {
     .detailDesign {
-        width: 1200px;
-        transform: scale(clamp(0.6, calc((100vw + 129px) / 1495px), 1));
-        transform-origin: left center;
+        width: 100%;
+        max-width: 1040px;
+        display: grid;
+        grid-template-columns: minmax(0, 540fr) minmax(0, 460fr);
+        gap: clamp(20px, 3vw, 40px);
+    }
+
+    .detailDesign #detailHeroImage {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        object-fit: cover;
+    }
+
+    .detailSettings {
+        font-size: clamp(1rem, 1.76vw, 1.5rem);
     }
 }
 
@@ -1047,7 +1062,7 @@ small {
         margin-top: 20px;
     }
 
-    @media screen and(max-width: 768px) {
+    @media screen and (max-width: 768px) {
 
         .cartContainer {
             max-width: clamp(335px, -337.71px + 179.3893vw, 1040px);
@@ -1316,7 +1331,7 @@ small {
         margin-inline: auto;
     }
 
-    #usersDesign {
+    .usersDesign {
         margin: 40px auto;
         width: 100px;
         height: 66px;
@@ -1564,3 +1579,18 @@ Webプログラミング演習3 -CCDonuts
 素材の権利者：中央キャリアアップアカデミー
 制作目的：授業課題
 */
+/* 最終確認：長い文字列・狭い画面・未実装機能の表示 */
+nav.breadcrumb { padding-right: 20px; }
+.detailContainer, .formDesign { min-width: 0; }
+.formDesign { flex: 1; align-items: flex-end; }
+.detailForm .cartButton { width: 100%; min-width: 0; font-size: clamp(0.75rem, 1.4vw, 1.25rem); }
+.favoriteDetail { flex: 0 0 52px; }
+.productCardName { height: auto; min-height: 3.2em; }
+.detailTitle, .comfirmText { overflow-wrap: anywhere; }
+.announce { flex-wrap: wrap; }
+button:disabled, input:disabled { opacity: 0.55; cursor: not-allowed; }
+.searchResult { text-align: center; color: #7F5539; line-height: 1.5; margin-block: 20px; }
+@media screen and (max-width: 768px) {
+    .favoriteDetail { flex-basis: 36px; }
+    .detailDesign #detailHeroImage { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
+}

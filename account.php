@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    require_once __DIR__ . '/app/session.php';
 
     if (!isset($_SESSION['customer'])) {
         header('Location: login.php');

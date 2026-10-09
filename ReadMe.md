@@ -23,20 +23,20 @@ Copyright © 2026 久我嗣生. All Rights Reserved.
 |**productDetail.php**|ccdonuts/productDetail.php|商品詳細|
 |**header.php**|ccdonuts/header.php|共通ファイル・header|
 |**footer.php**|ccdonuts/footer.php|共通ファイル・footer|
-|**cart.php**|ccdounts/cart.php|カートページ|
+|**cart.php**|ccdonuts/cart.php|カートページ|
 |**login.php**|ccdonuts/login.php|ログインページ|
-|**account.php**|ccdounts/account.php|ログイン後アカウントページ|
+|**account.php**|ccdonuts/account.php|ログイン後アカウントページ|
 |**register.php**|ccdonuts/register.php|会員登録ページ|
 |**registerComfirm.php**|ccdonuts/registerComfirm.php|登録内容確認ページ|
 |**registerComplete.php**|ccdonuts/registerComplete.php|登録完了ページ|
 ||||
 |**buying.php**|ccdonuts/app/buying.php|カートページの購入詳細に遷移するためのデザイン|
-|**db.php**|ccdounts/app/db.php|データベースへ接続するための記述がまとめられています|
+|**db.php**|ccdonuts/app/db.php|データベースへ接続するための記述がまとめられています|
 |**function.php**|ccdonuts/app/function.php|選択された商品に合わせて画像を表示するための関数を格納しています|
 ||||
 |**reset.css**|ccdonuts/common/reset.css|ウェブ本来のcssを無効化するためのcssファイルです|
 ||||
-|**products**|ccdounts/images/products|個々の商品の画像を格納しています|
+|**products**|ccdonuts/images/products|個々の商品の画像を格納しています|
 ||||
 |**script.js**|ccdonuts/scripts/script.js|ドロワーメニューの開閉に使用しています|
 |**announce.js**|ccdonuts/scripts/announce.js|headerの下部にパンくずメニューを追加するjsです。※開発中|
@@ -84,18 +84,3 @@ HTMLから始まりCSS、PHPと各ページごとに順に作業を切り分け�
 この部分とどう折り合いをつけるのかはやはり、まだ自分の中での課題として大きく残りそうです。
 
 ですが、確実に勉強になった部分もあるため、次回以降のWeb制作に活かしていけたらいいと考えています。
-
-### 内容・工夫点
-
-初めに取り組んだのは、headerとfooterのファイルを作るところからでした。
-
-各ページで使う共通ファイルですから予め用意する方が効率的だと考えました。実際、指示書でも最初のうちに作成するよう促されていましたね。
-
-header.phpには基本的なhtmlの<mark>お決まりセット</mark>から\<head>タグ,\<body>開始タグ,\<header>タグ,\<main>開始タグを含めた構成になっています。
-
-基本的なstyle.cssやgoogle-fontの指定もheader.phpで行っています。
-
-footer.phpには\<main>終了タグ,\<body>終了タグ,\<footer>タグ,\<small>タグ,などが含まれています。
-
-headerに付属しているドロワーメニューのscript.js、パンくずメニューのannounce.jsもfooter.phpで読み込ませています。
-

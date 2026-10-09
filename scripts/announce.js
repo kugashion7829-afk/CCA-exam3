@@ -1,33 +1,8 @@
 'use strict'
 
 const announce = document.querySelector('.announce');
-const linkAll = [
-                        '.topPage',
-                        '.productPage',
-                        '.productDetailPage',
-                        '.cartPage',
-                        '.loginPage',
-                        '.loginCompletePage',
-                        '.accountPage',
-                        '.registerPage',
-                        '.comfirmPage',
-                        '.completePage'
-                    ];
 
-const linkString = [
-                        'topPage',
-                        'productPage',
-                        'productDetailPage',
-                        'cartPage',
-                        'loginPage',
-                        'loginCompletePage',
-                        'accountPage',
-                        'registerPage',
-                        'comfirmPage',
-                        'completePage'
-                    ];
-
-window.addEventListener('load', function () {
+document.addEventListener('DOMContentLoaded', function () {
     const productTitle = document.querySelector('.detailTitle');
     const productName = productTitle?.textContent.trim() ?? '';
 
@@ -59,7 +34,7 @@ window.addEventListener('load', function () {
 
         loginCompletePage: [
             {text: 'TOP', href: './index.php'},
-            {text: 'ログイン完了', hraf: null}
+            {text: 'ログイン完了', href: null}
         ],
 
         accountPage: [
@@ -74,7 +49,7 @@ window.addEventListener('load', function () {
 
         comfirmPage: [
             {text: 'TOP', href: './index.php'},
-            {text: '入力確認', href: './register.php'},
+            {text: '会員登録', href: './register.php'},
             {text: '入力確認', href: null}
         ],
 
@@ -84,38 +59,28 @@ window.addEventListener('load', function () {
         ]
     };
     
-    const linkContainer = document.createElement('div');
+    if (!announce || document.querySelector('.topPage')) return;
+
+    const pageKey = Object.keys(breadcrumbPatterns).find(function (key) {
+        return document.querySelector('.' + key);
+    });
+    if (!pageKey) return;
+
+    const linkContainer = document.createElement('nav');
+    linkContainer.classList.add('breadcrumb');
+    linkContainer.setAttribute('aria-label', 'パンくず');
+    breadcrumbPatterns[pageKey].forEach(function (item, index) {
+        if (index > 0) {
+            const separator = document.createElement('span');
+            separator.textContent = '＞';
+            separator.setAttribute('aria-hidden', 'true');
+            linkContainer.appendChild(separator);
+        }
+        const element = document.createElement(item.href === null ? 'span' : 'a');
+        element.textContent = item.text;
+        if (item.href !== null) element.href = item.href;
+        else element.setAttribute('aria-current', 'page');
+        linkContainer.appendChild(element);
+    });
     announce.before(linkContainer);
-    linkContainer.classList.add('breadcrumb')
-    if (document.querySelector('.topPage')) {
-    linkContainer.style.display = 'none';
-    }
-    let breadcrumb = [];
-    linkAll.forEach(function (item, index) {
-
-    if(document.querySelector(item)) {
-            breadcrumb = breadcrumbPatterns[linkString[index]];
-            breadcrumb.forEach(function (item, index) {
-                if (index > 0) {
-                    const separator = document.createElement('span');
-                    separator.textContent = '＞';
-                    linkContainer.appendChild(separator);
-                }
-
-                const element = document.createElement(
-                    item.href === null ? 'span' : 'a'
-                );
-
-                element.textContent = item.text;
-
-                if (item.href !== null) {
-                    element.href = item.href;
-                } else {
-                    element.setAttribute('aria-current', 'page');
-                }
-
-                linkContainer.appendChild(element);
-            });
-        }          
-    })
-})
+});

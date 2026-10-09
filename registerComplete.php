@@ -1,5 +1,5 @@
 <?php 
-    session_start();
+    require_once __DIR__ . '/app/session.php';
 
     if (
         $_SERVER['REQUEST_METHOD'] === 'GET' &&
@@ -15,8 +15,8 @@
             </div>
             
             <div class="completeContainer completeContainerSecondary">
-                <a>クレジットカード登録へすすむ</a>
-                <a>購入確認ページへすすむ</a>
+                <a href="login.php">ログインページへすすむ</a>
+                <a href="cart.php">カートへすすむ</a>
             </div>    
         </div>
         <?php

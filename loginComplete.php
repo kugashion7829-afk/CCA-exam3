@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    require_once __DIR__ . '/app/session.php';
 
     if (!isset($_SESSION['customer'])) {
         header('Location: login.php');
@@ -18,7 +18,7 @@
     </div>
 
     <div class="completeContainer">
-        <a href="">購入確認ページへすすむ</a>
+        <a href="cart.php">カートへすすむ</a>
         <a href="./index.php">TOPページへもどる</a>
     </div>
 

@@ -1,13 +1,17 @@
 <?php
-session_start();
-if (!isset($_SESSION['csrfToken'])) {
-    $_SESSION['csrfToken'] = bin2hex(random_bytes(32));
-}
+require_once __DIR__ . '/app/session.php';
 
 require_once __DIR__ . '/app/db.php';
 require_once __DIR__ . '/app/function.php';
 
-$id = $_GET['id'] ?? '';
+$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]);
+if (!$id) {
+    http_response_code(400);
+    require __DIR__ . '/header.php';
+    echo '<p>商品IDが正しくありません。</p>';
+    require __DIR__ . '/footer.php';
+    exit;
+}
 
 $stmt = $pdo->prepare(
     'SELECT id, name, price, introduction
@@ -18,6 +22,7 @@ $stmt = $pdo->prepare(
 $stmt->execute(['id' => $id]);
 
 $product = $stmt->fetch();
+if ($product === false) http_response_code(404);
 ?>
 
 <?php require __DIR__ . '/header.php'; ?>
@@ -62,13 +67,9 @@ $product = $stmt->fetch();
                     <button class="cartButton " type="submit">カートに入れる</button>
                 </form>
 
-                <form action="favorite.php" method="post">
-                    <input type="hidden" name="productId" value="<?= (int) $product['id'] ?>">
-
-                    <button class="favoriteDetail" type="submit">
-                        <img src="./images/heart.svg">
-                    </button>
-                </form>
+                <button class="favoriteDetail" type="button" disabled aria-label="お気に入り（準備中）" title="お気に入り機能は準備中です">
+                    <img src="./images/heart.svg" alt="">
+                </button>
             </div>
 
         </div>

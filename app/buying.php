@@ -4,5 +4,5 @@
 
     <p>ご注文小計：税込<span>￥<?= number_format($cartTotal) ?></span></p>
     
-    <input type="submit" value="購入確認へ進む">
+    <input type="button" value="購入確認（準備中）" disabled>
 </div>

@@ -1,9 +1,22 @@
 <?php 
-    session_start();
+    require_once __DIR__ . '/app/session.php';
     
     if ($_SERVER['REQUEST_METHOD']!== 'POST') {
         header('Location: register.php');
         exit;
+    }
+
+    // 前回の確認情報を無効にしてから、新しい入力を検証する
+    unset($_SESSION['register'], $_SESSION['registerToken']);
+    if (!hasValidCsrfToken()) {
+        http_response_code(403);
+        exit('送信内容を確認できません。入力画面からやり直してください。');
+    }
+    foreach (['name', 'furigana', 'postcodeA', 'postcodeB', 'address', 'mailaddress', 'mailConfirm', 'passwordA', 'passwordB'] as $field) {
+        if (!isset($_POST[$field]) || !is_string($_POST[$field])) {
+            http_response_code(400);
+            exit('入力形式が正しくありません。');
+        }
     }
 
     $name = $_POST['name'] ?? '';
@@ -99,27 +112,27 @@
     
     <div class="comfirmContainer">
         <p class="comfirmSubtitle">住所</p>
-        <p class="comfirmText"><?= htmlspecialchars($address, ENT_QUOTES, 'UTF-8') ?>
+        <p class="comfirmText"><?= htmlspecialchars($address, ENT_QUOTES, 'UTF-8') ?></p>
     </div>
     
     <div class="comfirmContainer">
         <p class="comfirmSubtitle">メールアドレス</p>
-        <p class="comfirmText"><?= htmlspecialchars($mailaddress, ENT_QUOTES, 'UTF-8') ?>
+        <p class="comfirmText"><?= htmlspecialchars($mailaddress, ENT_QUOTES, 'UTF-8') ?></p>
     </div>
     
     <div class="comfirmContainer">
         <p class="comfirmSubtitle">メールアドレス確認用</p>
-        <p class="comfirmText"><?= htmlspecialchars($mailConfirm, ENT_QUOTES, 'UTF-8') ?>
+        <p class="comfirmText"><?= htmlspecialchars($mailConfirm, ENT_QUOTES, 'UTF-8') ?></p>
     </div>
     
     <div class="comfirmContainer">
         <p class="comfirmSubtitle">パスワード</p>
-        <p class="comfirmText"><?= htmlspecialchars($passwordA, ENT_QUOTES, 'UTF-8') ?>
+        <p class="comfirmText"><?= htmlspecialchars($passwordA, ENT_QUOTES, 'UTF-8') ?></p>
     </div>
 
     <div class="comfirmContainer">
         <p class="comfirmSubtitle">パスワード確認用</p>
-        <p class="comfirmText"><?= htmlspecialchars($passwordB, ENT_QUOTES, 'UTF-8') ?>
+        <p class="comfirmText"><?= htmlspecialchars($passwordB, ENT_QUOTES, 'UTF-8') ?></p>
     </div>
 
     <form action="registerComplete.php" method="post">

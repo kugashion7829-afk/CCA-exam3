@@ -1,7 +1,5 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+require_once __DIR__ . '/app/session.php';
 
 if (!isset($_SESSION['customer'])) {
     $ANNOUNCE = 'ゲスト';
@@ -26,7 +24,7 @@ if (!isset($_SESSION['customer'])) {
     <body>
         <header>
                              
-            <div class="menuWrap">
+            <div class="menuWrap" id="drawerMenu" inert>
                 <img class="menuLogo" src="./images/ccdonutsLogo.svg" alt="ドーナツロゴ">
                 <nav class="menu">
                     <ul>
@@ -47,7 +45,7 @@ if (!isset($_SESSION['customer'])) {
 
             <div class="designWrap headerDesignPrimary">
                 <div class="headerWrapPrimary">
-                    <button class="open">
+                    <button class="open" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawerMenu">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -78,7 +76,7 @@ if (!isset($_SESSION['customer'])) {
 
             <div class="designWrap headerDesignSecondary">
                 <div class="headerWrapSecondary">
-                    <form action="" method="post">
+                    <form action="product.php" method="get">
                         <button type="submit" aria-label="検索">
 
                             <img src="./images/lens.svg" alt="虫眼鏡">

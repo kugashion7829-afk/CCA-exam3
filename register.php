@@ -4,6 +4,7 @@
     <h1 class="usersDesign">会員登録</h1>
 
     <form class="registerPage" action="registerComfirm.php" method="post">
+        <input type="hidden" name="csrfToken" value="<?= htmlspecialchars($_SESSION['csrfToken'], ENT_QUOTES, 'UTF-8') ?>">
         <div class="registerContainer">
             <label for="name">お名前<span>（必須）</span></label>
             <input type="text" id="name" name="name" maxlength="100" autocomplete="name" placeholder="ドーナツ太郎" required>
@@ -54,14 +55,5 @@
 
 </div>
 
-<<script>
-    'use strict'
-
-    const registerContainer = document.querySelectorAll('registerContainer');
-    const inputRegister = document.getElementById('inputRegister');
-
-    inputRegister.addEventLister()
-
-</script>
 
 <?php require __DIR__ . '/footer.php'; ?>
